@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 from pathlib import Path
 
+from src.components.data_transformation import DataTransformation
+
 
 @dataclass
 class DataIngestionConfig:
@@ -57,4 +59,9 @@ class DataIngestion:
 
 if __name__ == '__main__':
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data_path, test_data_path = obj.initiate_data_ingestion()
+
+    data_transformation = DataTransformation()
+    X_train_t, X_test_t, y_train, y_test, preprocessor, threshold = (
+        data_transformation.prepare_data(train_data_path, test_data_path)
+    )
