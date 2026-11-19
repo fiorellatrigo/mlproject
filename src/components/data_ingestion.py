@@ -1,5 +1,6 @@
 import os
 import sys
+from src.components.model_trainer import ModelTrainer
 from src.exception import CustomException
 from src.logger import logging
 
@@ -9,6 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 
 @dataclass
@@ -65,3 +67,6 @@ if __name__ == '__main__':
     X_train_t, X_test_t, y_train, y_test, preprocessor, threshold = (
         data_transformation.prepare_data(train_data_path, test_data_path)
     )
+
+    trainer = ModelTrainer()
+    trainer.initiate_model_trainer(X_train_t, y_train, X_test_t, y_test)
