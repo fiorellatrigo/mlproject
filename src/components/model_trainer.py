@@ -3,7 +3,6 @@ import os
 import sys
 import warnings
 
-import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import GridSearchCV
