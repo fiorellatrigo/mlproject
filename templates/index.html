@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <section class="card hero-card">
+            <span class="badge">End-to-End Machine Learning API</span>
+            <h1>Student Academic Tier Indicator</h1>
+            <p class="subtitle">
+                Predict whether a student falls into the <strong>High Performer</strong> or
+                <strong>At-Risk / Standard</strong> tier based on sociodemographic and preparation factors.
+            </p>
+            <a href="{{ url_for('predict_datapoint') }}" class="btn btn-primary">
+                Launch Prediction Form
+            </a>
+        </section>
+    </main>
+</body>
+</html>
